@@ -1,30 +1,34 @@
 class Scene1 extends Phaser.Scene {
     constructor () {
         super("bootGame")
-       
     }
 
     preload(){
         this.load.image("background", "assets/images/background.png");
-        // this.load.image("ship", "assets/images/ship.png");
-        // this.load.image("ship2", "assets/images/ship2.png");
-        // this.load.image("ship3", "assets/images/ship3.png");
-        this.load.spritesheet("ship", "assets/spritesheets/spritesheets/ship.png",{
-            frameWidth: 16,
-            frameHeight: 16
-          });
-          this.load.spritesheet("ship2", "assets/spritesheets/spritesheets/ship2.png",{
-            frameWidth: 32,
-            frameHeight: 16
-          });
-          this.load.spritesheet("ship3", "assets/spritesheets/spritesheets/ship3.png",{
-            frameWidth: 32,
-            frameHeight: 32
-          });
-          this.load.spritesheet("explosion", "assets/spritesheets/spritesheets/explosion.png",{
-            frameWidth: 16,
-            frameHeight: 16
-          });
+        //this.load.image("cell", "assets/images/BloodCell.png");
+        // this.load.image("redVirus", "assets/images/Red_Virus.png");
+        // this.load.image("greenVirus", "assets/images/Green_virus.png");
+        // this.load.image("blueVirus", "assets/images/Blue.png");
+        // this.load.image("yellowVirus", "assets/images/Yellow_Virus.png");
+        // this.load.image("pinkVirus", "assets/images/Pink_Virus.png");
+        
+        this.load.spritesheet("cell1", "assets/spritesheets/bloodcells.png",{
+            frameWidth: 42,
+            frameHeight: 40
+        });
+
+        // this.load.spritesheet("cell2", "assets/spritesheets/bloodcells.png",{
+        //     frameWidth: 40,
+        //     frameHeight: 42
+        // });
+        // this.load.spritesheet("cell3", "assets/spritesheets/bloodcells.png",{
+        //     frameWidth: 40,
+        //     frameHeight: 42
+        // });
+        // this.load.spritesheet("explosion", "assets/spritesheets/explosion.png",{
+        //     frameWidth: 16,
+        //     frameHeight: 16
+        // });
     }
 
     create() {

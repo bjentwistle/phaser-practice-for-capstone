@@ -1,72 +1,84 @@
 
 class Scene2 extends Phaser.Scene {
     constructor () {
-        super("playGame")
-        
+        super("playGame")  
     }
     
     create() {
         this.config = this.sys.game.config; //makes sure that config is available in this scene
+        
         //this.background = this.add.image(0, 0, "background");
-        this.background = this.add.tileSprite(0, 0, this.config.width, this.config.height, "background");
-        this.background.setOrigin(0, 0);
-  
-        this.ship1 = this.add.sprite(this.config.width / 2 - 150, this.config.height / 2, "ship");
-        this.ship2 = this.add.sprite(this.config.width / 2, this.config.height / 2, "ship2");
-        this.ship3 = this.add.sprite(this.config.width / 2 + 150, this.config.height / 2, "ship3");
-        this.ship1.setScale(2);
-        // this.ship1.setOrigin(0.5);
-        // this.ship1.flipY = true;
-        // this.ship1.angle = 90;
+        // this.background = this.add.tileSprite(0, 0, this.config.width, this.config.height, "background");
+        // this.background.setOrigin(0, 0);
+        
+        // this.cell1 = this.add.image(this.config.width / 2 - 150, this.config.height / 2, "cell");
+        // this.cell2 = this.add.image(this.config.width / 2, this.config.height / 2, "cell");
+        // this.cell3 = this.add.image(this.config.width / 2 + 150, this.config.height / 2, "cell");
+        // this.cell1.setScale(0.1);
+        // this.cell2.setScale(0.2);
+        // this.cell3.setScale(0.15);
 
-        this.ship3.setScale(2);
-        // this.ship3.setOrigin(0.5);
-        // this.ship3.flipY = true;
-        // this.ship3.angle = 270;
+        this.cell1 = this.add.sprite(this.config.width / 2 - 150, this.config.height / 2, "cell1");
+        // console.log("Blood sprite -", cell1)
+        // // this.cell2 = this.add.sprite(this.config.width / 2, this.config.height / 2, "cell2");
+        // // this.cell3 = this.add.sprite(this.config.width / 2 + 150, this.config.height / 2, "cell3");
+        
+        // this.cell1.setScale(1);
+        // this.cell1.setOrigin(0.5);
+        // this.cell1.flipX = true;
 
-        this.ship2.setScale(2);
-        // this.ship2.setOrigin(0.5);
+        // // this.cell2.setScale(1);
+        // // this.cell2.setOrigin(0.5);
+        // // this.cell2.flipX = true;
+       
+
+        // // this.cell3.setScale(1);
+        // // this.cell3.setOrigin(0.5);
+        // // this.cell1.flipX = true;
 
          //create animations
          this.anims.create({
-            key: "ship1_anim",
-            frames: this.anims.generateFrameNumbers("ship"),
-            frameRate: 20,
+            key: "cell1_anim",
+            frames: this.anims.generateFrameNumbers("cell1"),
+            frameRate: 2,
             repeat: -1
          });
-        this.anims.create({
-            key: "ship2_anim",
-            frames: this.anims.generateFrameNumbers("ship2"),
-            frameRate: 20,
-            repeat: -1
-        });
-        this.anims.create({
-            key: "ship3_anim",
-            frames: this.anims.generateFrameNumbers("ship3"),
-            frameRate: 20,
-            repeat: -1
-        });
 
-        this.anims.create({
-            key: "explode",
-            frames: this.anims.generateFrameNumbers("explosion"),
-            frameRate: 20,
-            repeat: 0,
-            hideOnComplete: true
-          });
+        // // this.anims.create({
+        // //     key: "cell2_anim",
+        // //     frames: this.anims.generateFrameNumbers("cell2"),
+        // //     frameRate: 2,
+        // //     repeat: -1
+        // // });
+        // // this.anims.create({
+        // //     key: "cell3_anim",
+        // //     frames: this.anims.generateFrameNumbers("cell3"),
+        // //     frameRate: 2,
+        // //     repeat: -1
+        // // });
 
-        //play the animations
-        this.ship1.play("ship1_anim");
-        this.ship2.play("ship2_anim");
-        this.ship3.play("ship3_anim");
+        // this.anims.create({
+        //     key: "explode",
+        //     frames: this.anims.generateFrameNumbers("explosion"),
+        //     frameRate: 20,
+        //     repeat: 0,
+        //     hideOnComplete: true
+        //   });
 
-        //make the ships clickable to destroy them
-        this.ship1.setInteractive();
-        this.ship2.setInteractive();
-        this.ship3.setInteractive();
+        // //play the animations
+        this.cell1.play("cell1_anim");
+        // // this.cell2.play("cell2_anim");
+        // // this.cell3.play("cell3_anim");
 
-        // object destroyed
-        this.input.on('gameobjectdown', this.destroyShip, this);
+        // //make the ships clickable to destroy them
+        // this.cell1.setInteractive();
+        // // this.cell2.setInteractive();
+        // // this.cell3.setInteractive();
+        // // this.ship2.setInteractive();
+        // // this.ship3.setInteractive();
+
+        // // object destroyed
+        // this.input.on('gameobjectdown', this.destroyCell, this);
 
         this.add.text(20, 20, "Playing game!", {
           font: "30px Arial",
@@ -75,43 +87,45 @@ class Scene2 extends Phaser.Scene {
 
     }
 
-    update(){
-        // to call a function to move the ships vertically
-        this.moveShip(this.ship1, 1);
-        this.moveShip(this.ship2, 1.5);
-        this.moveShip(this.ship3, 2);
+  //   update(){
+  //       // to call a function to move the ships vertically
+  //       this.moveCell(this.cell, 1);
+  //       this.moveCell(this.cell2, 1.5);
+  //       this.moveCell(this.cell3, 2);
+  //       // this.moveShip(this.ship2, 1.5);
+  //       // this.moveShip(this.ship3, 2);
 
-    // to scroll the background image
-    this.background.tilePositionY -= 0.5;
+  //   // to scroll the background image
+  //   //this.background.tilePositionY -= 0.5;
 
-    }
+  //   }
 
-    // create the function to move the ships
-    moveShip(ship, speed) {
+  //   // create the function to move the ships
+  //   moveCell(cell, speed) {
       
-        // increase the position of the ship on the vertical axis
-        ship.y += speed;
-        // if the ship hits the bottom of the screen call the reset function
-        if (ship.y > this.config.height) {
-        //call a reset position function
-        this.resetShipPos(ship);
-        }
-    }
+  //       // increase the position of the ship on the vertical axis
+  //       cell.y += speed;
+  //       // if the ship hits the bottom of the screen call the reset function
+  //       if (cell.y > this.config.height) {
+  //       //call a reset position function
+  //       this.resetCellPos(cell);
+  //       }
+  //   }
 
-  //create the reset position function
-  resetShipPos(ship){
-    // put the ship on the top
-    ship.y = 0;
-    // put the ship on a random position on the x axis
-    const randomX = Phaser.Math.Between(0, this.config.width);
-    ship.x = randomX;
-  }
+  // //create the reset position function
+  // resetCellPos(cell){
+  //   // put the ship on the top
+  //   cell.y = 0;
+  //   // put the ship on a random position on the x axis
+  //   const randomX = Phaser.Math.Between(0, this.config.width);
+  //   cell.x = randomX;
+  // }
 
-  // destroy ships function
-  destroyShip(pointer, gameObject) {
-    gameObject.setTexture("explosion");
-    gameObject.play("explode");
-  }
+  // // destroy ships function
+  // destroyCell(pointer, gameObject) {
+  //   gameObject.setTexture("explosion");
+  //   gameObject.play("explode");
+  // }
 
   
 
