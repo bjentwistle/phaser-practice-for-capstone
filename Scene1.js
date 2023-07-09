@@ -17,14 +17,14 @@ class Scene1 extends Phaser.Scene {
             frameHeight: 40
         });
 
-        // this.load.spritesheet("cell2", "assets/spritesheets/bloodcells.png",{
-        //     frameWidth: 40,
-        //     frameHeight: 42
-        // });
-        // this.load.spritesheet("cell3", "assets/spritesheets/bloodcells.png",{
-        //     frameWidth: 40,
-        //     frameHeight: 42
-        // });
+        this.load.spritesheet("cell2", "assets/spritesheets/bloodcells.png",{
+            frameWidth: 41,
+            frameHeight: 40
+        });
+        this.load.spritesheet("cell3", "assets/spritesheets/bloodcells.png",{
+            frameWidth: 41,
+            frameHeight: 40
+        });
         // this.load.spritesheet("explosion", "assets/spritesheets/explosion.png",{
         //     frameWidth: 16,
         //     frameHeight: 16
