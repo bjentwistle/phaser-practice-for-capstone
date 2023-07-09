@@ -25,10 +25,10 @@ class Scene1 extends Phaser.Scene {
             frameWidth: 41,
             frameHeight: 40
         });
-        // this.load.spritesheet("explosion", "assets/spritesheets/explosion.png",{
-        //     frameWidth: 16,
-        //     frameHeight: 16
-        // });
+        this.load.spritesheet("explosion", "assets/spritesheets/explosion.png",{
+            frameWidth: 16,
+            frameHeight: 16
+        });
     }
 
     create() {

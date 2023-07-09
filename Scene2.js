@@ -57,13 +57,13 @@ class Scene2 extends Phaser.Scene {
             repeat: -1
         });
 
-        // this.anims.create({
-        //     key: "explode",
-        //     frames: this.anims.generateFrameNumbers("explosion"),
-        //     frameRate: 20,
-        //     repeat: 0,
-        //     hideOnComplete: true
-        //   });
+        this.anims.create({
+            key: "explode",
+            frames: this.anims.generateFrameNumbers("explosion"),
+            frameRate: 20,
+            repeat: 0,
+            hideOnComplete: true
+          });
 
         // //play the animations
         this.cell1.play("cell1_anim");
@@ -71,14 +71,13 @@ class Scene2 extends Phaser.Scene {
         this.cell3.play("cell3_anim");
 
         // //make the ships clickable to destroy them
-        // this.cell1.setInteractive();
-        // // this.cell2.setInteractive();
-        // // this.cell3.setInteractive();
-        // // this.ship2.setInteractive();
-        // // this.ship3.setInteractive();
+        this.cell1.setInteractive();
+        this.cell2.setInteractive();
+        this.cell3.setInteractive();
+     
 
         // // object destroyed
-        // this.input.on('gameobjectdown', this.destroyCell, this);
+        this.input.on('gameobjectdown', this.destroyCell, this);
 
         this.add.text(20, 20, "Playing game!", {
           font: "30px Arial",
@@ -120,11 +119,11 @@ class Scene2 extends Phaser.Scene {
       cell.x = randomX;
     }
 
-    // // destroy ships function
-    // destroyCell(pointer, gameObject) {
-    //   gameObject.setTexture("explosion");
-    //   gameObject.play("explode");
-    // }
+    // // destroy cells function
+    destroyCell(pointer, gameObject) {
+      gameObject.setTexture("explosion");
+      gameObject.play("explode");
+    }
 
   
 
