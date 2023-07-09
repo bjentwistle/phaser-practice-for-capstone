@@ -23,9 +23,9 @@ class Scene2 extends Phaser.Scene {
         // // this.cell2 = this.add.sprite(this.config.width / 2, this.config.height / 2, "cell2");
         // // this.cell3 = this.add.sprite(this.config.width / 2 + 150, this.config.height / 2, "cell3");
         
-        // this.cell1.setScale(1);
-        // this.cell1.setOrigin(0.5);
-        // this.cell1.flipX = true;
+        this.cell1.setScale(1);
+        this.cell1.setOrigin(0.5);
+        this.cell1.flipX = true;
 
         // // this.cell2.setScale(1);
         // // this.cell2.setOrigin(0.5);
@@ -87,39 +87,39 @@ class Scene2 extends Phaser.Scene {
 
     }
 
-  //   update(){
-  //       // to call a function to move the ships vertically
-  //       this.moveCell(this.cell, 1);
-  //       this.moveCell(this.cell2, 1.5);
-  //       this.moveCell(this.cell3, 2);
+    update(){
+        // to call a function to move the ships vertically
+        this.moveCell(this.cell1, 1);
+        // this.moveCell(this.cell2, 1.5);
+        // this.moveCell(this.cell3, 2);
   //       // this.moveShip(this.ship2, 1.5);
   //       // this.moveShip(this.ship3, 2);
 
   //   // to scroll the background image
   //   //this.background.tilePositionY -= 0.5;
 
-  //   }
+    }
 
-  //   // create the function to move the ships
-  //   moveCell(cell, speed) {
+    // create the function to move the ships
+    moveCell(cell, speed) {
       
-  //       // increase the position of the ship on the vertical axis
-  //       cell.y += speed;
-  //       // if the ship hits the bottom of the screen call the reset function
-  //       if (cell.y > this.config.height) {
-  //       //call a reset position function
-  //       this.resetCellPos(cell);
-  //       }
-  //   }
+        // increase the position of the ship on the vertical axis
+        cell.y += speed;
+        // if the ship hits the bottom of the screen call the reset function
+        if (cell.y > this.config.height) {
+        //call a reset position function
+        this.resetCellPos(cell);
+        }
+    }
 
-  // //create the reset position function
-  // resetCellPos(cell){
-  //   // put the ship on the top
-  //   cell.y = 0;
-  //   // put the ship on a random position on the x axis
-  //   const randomX = Phaser.Math.Between(0, this.config.width);
-  //   cell.x = randomX;
-  // }
+  //create the reset position function
+  resetCellPos(cell){
+    // put the ship on the top
+    cell.y = 0;
+    // put the ship on a random position on the x axis
+    const randomX = Phaser.Math.Between(0, this.config.width);
+    cell.x = randomX;
+  }
 
   // // destroy ships function
   // destroyCell(pointer, gameObject) {

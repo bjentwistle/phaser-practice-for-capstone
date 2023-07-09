@@ -13,7 +13,7 @@ class Scene1 extends Phaser.Scene {
         // this.load.image("pinkVirus", "assets/images/Pink_Virus.png");
         
         this.load.spritesheet("cell1", "assets/spritesheets/bloodcells.png",{
-            frameWidth: 42,
+            frameWidth: 41,
             frameHeight: 40
         });
 
