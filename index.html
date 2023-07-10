@@ -8,6 +8,20 @@
         <script type="text/javascript" src="Scene2.js"></script>
         
     </head>
-    <body>
+    <body style = "margin: 0">
+        <script>
+        const config = {
+            width: window.innerWidth,
+            height: window.innerHeight,
+            backgroundColor: 0xB61736,
+            scene: [Scene1, Scene2],
+            pixelArt: true,
+            fps: {
+                target: 60,
+                forceSetTimeOut: true
+            }
+          }
+          const game = new Phaser.Game(config);
+        </script>
     </body>
 </html>

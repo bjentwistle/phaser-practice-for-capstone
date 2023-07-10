@@ -5,7 +5,6 @@ class Scene1 extends Phaser.Scene {
 
     preload(){
         this.load.image("background", "assets/images/background.png");
-        //this.load.image("cell", "assets/images/BloodCell.png");
         // this.load.image("redVirus", "assets/images/Red_Virus.png");
         // this.load.image("greenVirus", "assets/images/Green_virus.png");
         // this.load.image("blueVirus", "assets/images/Blue.png");
